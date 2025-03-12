@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Áreas</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Calculadora de Áreas</h1>
+    
+    <!-- Menu de Links -->
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('circulo')">Calcular a área de um Círculo</a></li>
+            <li><a href="#" onclick="showSection('triangulo')">Calcular a área de um Triângulo</a></li>
+            <li><a href="#" onclick="showSection('quadrado')">Calcular a área de um Quadrado</a></li>
+            <li><a href="#" onclick="showSection('retangulo')">Calcular a área de um Retângulo</a></li>
+        </ul>
+    </nav>
+
+    <!-- Seção para Círculo -->
+    <div id="circulo" class="section">
+        <h2>Área do Círculo</h2>
+        <label for="raio">Digite o raio do círculo:</label>
+        <input type="number" id="raio" step="any">
+        <button onclick="calcularCirculo()">Calcular</button>
+        <p id="resultado-circulo"></p>
+    </div>
+
+    <!-- Seção para Triângulo -->
+    <div id="triangulo" class="section">
+        <h2>Área do Triângulo</h2>
+        <label for="base">Digite a base do triângulo:</label>
+        <input type="number" id="base" step="any">
+        <br>
+        <label for="altura">Digite a altura do triângulo:</label>
+        <input type="number" id="altura" step="any">
+        <button onclick="calcularTriangulo()">Calcular</button>
+        <p id="resultado-triangulo"></p>
+    </div>
+
+    <!-- Seção para Quadrado -->
+    <div id="quadrado" class="section">
+        <h2>Área do Quadrado</h2>
+        <label for="lado">Digite o comprimento do lado do quadrado:</label>
+        <input type="number" id="lado" step="any">
+        <button onclick="calcularQuadrado()">Calcular</button>
+        <p id="resultado-quadrado"></p>
+    </div>
+
+    <!-- Seção para Retângulo -->
+    <div id="retangulo" class="section">
+        <h2>Área do Retângulo</h2>
+        <label for="largura">Digite a largura do retângulo:</label>
+        <input type="number" id="largura" step="any">
+        <br>
+        <label for="comprimento">Digite o comprimento do retângulo:</label>
+        <input type="number" id="comprimento" step="any">
+        <button onclick="calcularRetangulo()">Calcular</button>
+        <p id="resultado-retangulo"></p>
+    </div>
+
+    <script>
+        // Função para mostrar a seção correspondente
+        function showSection(sectionId) {
+            // Oculta todas as seções
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Mostra a seção selecionada
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        // Função para calcular a área do círculo
+        function calcularCirculo() {
+            const raio = parseFloat(document.getElementById('raio').value);
+            if (!isNaN(raio) && raio > 0) {
+                const area = Math.PI * Math.pow(raio, 2);
+                document.getElementById('resultado-circulo').innerText = `A área do círculo é: ${area.toFixed(2)}`;
+            } else {
+                document.getElementById('resultado-circulo').innerText = 'Por favor, insira um valor válido para o raio.';
+            }
+        }
+
+        // Função para calcular a área do triângulo
+        function calcularTriangulo() {
+            const base = parseFloat(document.getElementById('base').value);
+            const altura = parseFloat(document.getElementById('altura').value);
+            if (!isNaN(base) && base > 0 && !isNaN(altura) && altura > 0) {
+                const area = (base * altura) / 2;
+                document.getElementById('resultado-triangulo').innerText = `A área do triângulo é: ${area.toFixed(2)}`;
+            } else {
+                document.getElementById('resultado-triangulo').innerText = 'Por favor, insira valores válidos para base e altura.';
+            }
+        }
+
+        // Função para calcular a área do quadrado
+        function calcularQuadrado() {
+            const lado = parseFloat(document.getElementById('lado').value);
+            if (!isNaN(lado) && lado > 0) {
+                const area = Math.pow(lado, 2);
+                document.getElementById('resultado-quadrado').innerText = `A área do quadrado é: ${area.toFixed(2)}`;
+            } else {
+                document.getElementById('resultado-quadrado').innerText = 'Por favor, insira um valor válido para o lado.';
+            }
+        }
+
+        // Função para calcular a área do retângulo
+        function calcularRetangulo() {
+            const largura = parseFloat(document.getElementById('largura').value);
+            const comprimento = parseFloat(document.getElementById('comprimento').value);
+            if (!isNaN(largura) && largura > 0 && !isNaN(comprimento) && comprimento > 0) {
+                const area = largura * comprimento;
+                document.getElementById('resultado-retangulo').innerText = `A área do retângulo é: ${area.toFixed(2)}`;
+            } else {
+                document.getElementById('resultado-retangulo').innerText = 'Por favor, insira valores válidos para largura e comprimento.';
+            }
+        }
+    </script>
+    <script>
+        function voltarPagina() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

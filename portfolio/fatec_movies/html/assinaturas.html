@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assinaturas - Fatec Movies</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .plan-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .plan {
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+            transition: transform 0.3s;
+        }
+        .plan:hover {
+            transform: scale(1.05);
+            background-color: white;
+
+        }
+        .plan-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .plan-price {
+            font-size: 20px;
+            color: #007BFF;
+            margin: 10px 0;
+        }
+        .plan-description {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .conteudo {
+            padding-top: 150px; /* Ajuste o valor conforme necessário */
+        }
+        .conteudo h1{
+            text-align: center;
+        }
+        .buy-button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .buy-button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="topo conteudo-flex">
+
+        <div class="topo-esquerdo conteudo-flex">
+ 
+          <div class="topo-logo">
+            <img src="../image/logoteste2a.png" alt="Imagem logotipo do site" title="Imagem logotipo do site">
+          </div>
+
+        </div>
+
+        <div class="topo-centro conteudo-flex">
+
+
+          <nav>
+            <ul class="topo-menu conteudo-flex">
+                <li><a href="../index.php">Início</a></li>
+                <li><a href="series.html">Séries</a></li>
+                <li><a href="filmes.html">Filmes</a></li>
+                <li><a href="categorias.html">Categorias</a></li>
+            </ul>
+          </nav>
+
+
+          <div class="topo-pesquisa">
+            <div class="conteudo-pesquisa">
+              <form class="conteudo-flex" method="post">
+              <fieldset class="bar-pesquisa">
+                <input type="text" placeholder="Pesquisar um filme ou série..." alt="Digite aqui um filme ou série para pesquisar">
+              </fieldset>
+              <fieldset class="btn-pesquisar conteudo-flex">
+                <button type="button" title="Pesquisar">
+                  <span class="fas fa-search"></span>
+                </button>
+              </fieldset>
+            </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="topo-direito">
+          <div class="sublogin">
+              <div>
+                  <button class="subloginbtn">Fazer Login<br>ou Assinar <span class="fa fa-caret-down"></span></button>
+              </div>
+              <div class="sublogin-conteudo">
+                  <a href="login.html" title="Entrar"><button type="button">Entrar</button></a>
+
+                  <p>ou</p>
+                  <button type="button" title="Assinar">Assinar</button>
+              </div>
+          </div>
+      </div>
+
+    </div>
+
+
+    <main>
+        <div class="conteudo">
+            <h1>Escolha seu plano de assinatura</h1>
+            <div class="plan-container">
+                <div class="plan">
+                    <div class="plan-title">Plano Básico</div>
+                    <div class="plan-price">R$ 30,00/mês</div>
+                    <div class="plan-description">Acesso limitado aos filmes</div>
+                    <a href="pagamentos.html?plano=basico" class="buy-button">Comprar</a>
+                </div>
+                <div class="plan">
+                    <div class="plan-title">Plano Padrão</div>
+                    <div class="plan-price">R$ 50,00/mês</div>
+                    <div class="plan-description">Acesso a todos os filmes em HD</div>
+                    <a href="pagamentos.html?plano=padrao" class="buy-button">Comprar</a>
+                </div>
+                <div class="plan">
+                    <div class="plan-title">Plano Premium</div>
+                    <div class="plan-price">R$ 70,00/mês</div>
+                    <div class="plan-description">Acesso a todos os filmes em Ultra HD + conteúdos exclusivos</div>
+                    <a href="pagamentos.html?plano=premium" class="buy-button">Comprar</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Fatec Movies. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

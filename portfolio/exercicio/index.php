@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma dos Dígitos</title>
+</head>
+<body>
+    <h1>Calcular a Soma dos Dígitos de um Número</h1>
+    <form method="post" action="soma_digitos.php">
+        <label for="numero">Digite um número inteiro:</label>
+        <input type="number" id="numero" name="numero" required>
+        <button type="submit">Calcular</button>
+    </form>
+    
+</body>
+</html>

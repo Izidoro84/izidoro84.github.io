@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+<head>
+<title>Fatec Movies - Filmes e Séries Online</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width-device-width, initial-scale=1">
+<link rel="icon" type="image/png" sizes="32x32" href="../image/icone-site/icon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="../css/stylelogin.css">
+<style>      
+       #login img,
+       #cadastro img {
+           width: 70px;
+           height: 55px;
+           margin:auto;
+           display:block;
+       }
+</style>
+</head>
+<body>
+<div class="container">
+<a class="links" id="paracadastro"></a>
+<a class="links" id="paralogin"></a>
+<div class="content">
+<div id="login">
+<img src="../image/logoteste2a.png" alt="Imagem logotipo do site" title="Imagem logotipo do site">
+<form method="post" action="../php/login.php">
+<h1>Login</h1>
+<p>
+<label for="email_login">Seu e-mail</label>
+<input id="email_login" name="username" required="required" type="text" placeholder="contato@htmlecsspro.com"/>
+</p>
+<p>
+<label for="senha_login">Sua senha</label>
+<input id="senha_login" name="password" required="required" type="password" placeholder="1234" />
+</p>
+<p>
+<input type="checkbox" name="manterlogado" id="manterlogado" value="" />
+<label for="manterlogado">Manter-me logado</label>
+</p>
+<p>
+<input type="submit" value="Logar" />
+</p>
+<p class="link">
+    Ainda não tem conta?
+    <a href="#paracadastro">Cadastre-se</a>
+</p>
+</form>
+</div>
+<div id="cadastro">
+<img src="../image/logoteste2a.png" alt="Imagem logotipo do site" title="Imagem logotipo do site">
+<form method="post" action="../php/register.php">
+<h1>Cadastro</h1>
+<p>
+<label for="nome_cad">Seu nome</label>
+<input id="nome_cad" name="username" required="required" type="text" placeholder="Luiz Augusto" />
+</p>
+<p>
+<label for="email_cad">Seu e-mail</label>
+<input id="email_cad" name="email" required="required" type="email" placeholder="contato@htmlecsspro.com"/>
+</p>
+<p>
+<label for="senha_cad">Sua senha</label>
+<input id="senha_cad" name="password" required="required" type="password" placeholder="1234"/>
+</p>
+<p>
+<input type="submit" value="Cadastrar"/>
+</p>
+<p class="link">
+    Já tem conta?
+    <a href="#paralogin">Ir para Login</a>
+</p>
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>

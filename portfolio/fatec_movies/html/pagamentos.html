@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Pagamento - Fatec Movies</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .payment-option {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        .payment-option img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .conteudo {
+            padding-top: 150px;
+        }
+        .conteudo h1{
+            text-align: center;
+        }
+        .pay-button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .pay-button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="topo conteudo-flex">
+
+        <div class="topo-esquerdo conteudo-flex">
+ 
+          <div class="topo-logo">
+            <img src="../image/logoteste2a.png" alt="Imagem logotipo do site" title="Imagem logotipo do site">
+          </div>
+
+        </div>
+
+        <div class="topo-centro conteudo-flex">
+
+
+          <nav>
+            <ul class="topo-menu conteudo-flex">
+              <li><a href="./index.php">Início</a></li>
+              <li><a href="series.html">Séries</a></li>
+              <li><a href="filmes.html">Filmes</a></li>
+              <li><a href="categorias.html">Categorias</a></li>
+              <li><a href="assinaturas.html">Assinaturas</a></li>
+
+            </ul>
+          </nav>
+
+
+          <div class="topo-pesquisa">
+            <div class="conteudo-pesquisa">
+              <form class="conteudo-flex" method="post">
+              <fieldset class="bar-pesquisa">
+                <input type="text" placeholder="Pesquisar um filme ou série..." alt="Digite aqui um filme ou série para pesquisar">
+              </fieldset>
+              <fieldset class="btn-pesquisar conteudo-flex">
+                <button type="button" title="Pesquisar">
+                  <span class="fas fa-search"></span>
+                </button>
+              </fieldset>
+            </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="topo-direito">
+          <div class="sublogin">
+              <div>
+                  <button class="subloginbtn">Fazer Login<br>ou Assinar <span class="fa fa-caret-down"></span></button>
+              </div>
+              <div class="sublogin-conteudo">
+                  <a href="login.html" title="Entrar"><button type="button">Entrar</button></a>
+
+                  <p>ou</p>
+                  <button type="button" title="Assinar">Assinar</button>
+              </div>
+          </div>
+      </div>
+
+    </div>
+
+    <main>
+        <div class="conteudo">
+            <div class="container">
+                <h2>Pagamento do Plano <span id="plan-type"></span></h2>
+                <div class="payment-option">
+                    <img src="../image/cartao-de-credito.png" alt="Cartão de Crédito">
+                    <span>Cartão de Crédito</span>
+                </div>
+                <div class="payment-option">
+                    <img src="../image/paypal.png" alt="PayPal">
+                    <span>PayPal</span>
+                </div>
+                <div class="payment-option">
+                    <img src="../image/boleto.png" alt="Boleto">
+                    <span>Boleto</span>
+                </div>
+                <a href="#" class="pay-button">Pagar</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Fatec Movies. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const planType = urlParams.get('plano');
+        document.getElementById('plan-type').innerText = planType.charAt(0).toUpperCase() + planType.slice(1);
+    </script>
+</body>
+</html>
